@@ -7,3 +7,11 @@ int main(){
     if(n>0){
         printf("positif");
     }
+    else if(n == 0){
+        printf("null");
+    }
+    else{
+        printf("negative");
+    }
+    return 0;
+}
