@@ -1,14 +1,17 @@
 #include <stdio.h>
 
-int main(){
-    int n , reversed = 0 , lastN ;
-    printf("entrer un nomber ");
-    scanf("%d",&n);
-    for(int i = 0; i< n; i++){
-        lastN = n % 10;
-        reversed = reversed * 10 + lastN;
-        n = n/10;
+int main () {
+    char c;
+    printf("enter un lettre ");
+    scanf("%c",&c);
+    if(c >= 'A' && c <= 'Z'){
+        printf("le caractere %c et majuscule ",c);
     }
-    printf("reversed number is : %d",reversed);
+    else if(c >= 'a' && c <= 'z'){
+        printf("le caractere %c et miniscule ",c);
+    }
+    else{
+        printf("ca se n est pas un caractre ");
+    }
     return 0;
 }
