@@ -11,7 +11,7 @@ int main(){
     scanf("%d",&Na);
 
     printf("prime = ");
-    scanf("%d",&prime);
+    scanf("%f",&prime);
 
 
     if(age < 25){
@@ -40,6 +40,6 @@ int main(){
     if(Na > 1){
         primeFinal += 1;
     }
-    printf("alors la prime final et %d ", primeFinal);
+    printf("alors la prime final et %.2f ", primeFinal);
     return 0;
 }

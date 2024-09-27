@@ -25,14 +25,14 @@ int main()
         printf("7 : Quitter\n");
         printf("Votre choix : ");
         scanf("%d", &choix);
-
+        getchar();
         switch (choix)
         {
         case 1:
             do
             {
                 printf("enter le titre :  ");
-                scanf("%s", titre[count]);
+                fgets(titre[count],sizeof(titre[count]),stdin);
                 printf("enter l auteur : ");
                 scanf("%s", auteur[count]);
                 printf("entre le prix ");
@@ -50,7 +50,7 @@ int main()
         case 2:
             for (int i = 0; i < count; i++)
             {
-                printf("titre %s / auteur %s / price %.2f / quantity %d ", titre[i], auteur[i], prix[i], quantity[i]);
+                printf("titre %s / auteur %s / price %.2f / quantity %d \n", titre[i], auteur[i], prix[i], quantity[i]);
             }
             break;
         case 3:
@@ -119,3 +119,4 @@ int main()
     } while (choix != 7);
     return 0;
 }
+

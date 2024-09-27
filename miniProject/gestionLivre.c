@@ -73,6 +73,8 @@ int main()
         printf("choix 5 : recherche sur un livre \n");
         printf("choix 6 : afficher le nombre des livre stocker \n");
         printf("choix 7 : quitter \n");
+        printf("entrer le choix : ");
+        scanf("%d",&choix);
         switch (choix)
         {
         case 1:
@@ -91,16 +93,16 @@ int main()
             printf("still working on this one ");
             break;
         case 6 : 
-            printf("le nombre des livre et : %d",)
+            printf("le nombre des livre et : %d",count);
         default:
             break;
         }
-    }while(choix != 7)
-    ajouter();
-    modifier();
-    supprimer();
-    afficher();
+    }while(choix != 7);
+    // ajouter();
+    // modifier();
+    // supprimer();
+    // afficher();
 
-    printf("%d", count);
+    // printf("%d", count);
     return 0;
 }
