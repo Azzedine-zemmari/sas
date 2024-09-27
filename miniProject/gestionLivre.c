@@ -54,18 +54,53 @@ int supprimer(){
     printf("entrer le titre de livre : ");
     scanf("%s",titre);
     for(int i = 0;i<count;i++){
-        if(strcmp(livre[count].titre,titre) == 0){
-            for(int j = i;j<count;i++){
-                
+        if(strcmp(livre[i].titre,titre) == 0){
+            for(int j = 0 ; j < count-1 ;i++){
+                livre[j] = livre[j+1];
             }
+            count--;
         }
     }
 }
 int main()
 {
+    int choix;
+    do{
+        printf("choix 1 : ajouter un livre \n");
+        printf("choix 2 : modifier la quantity de livre \n");
+        printf("choix 3 : supprimer un livre \n");
+        printf("choix 4 : afficher toute livre \n");
+        printf("choix 5 : recherche sur un livre \n");
+        printf("choix 6 : afficher le nombre des livre stocker \n");
+        printf("choix 7 : quitter \n");
+        switch (choix)
+        {
+        case 1:
+            ajouter();
+            break;
+        case 2 : 
+            modifier();
+            break;
+        case 3 : 
+            supprimer();
+            break;
+        case 4 : 
+            afficher();
+            break;
+        case 5 : 
+            printf("still working on this one ");
+            break;
+        case 6 : 
+            printf("le nombre des livre et : %d",)
+        default:
+            break;
+        }
+    }while(choix != 7)
     ajouter();
     modifier();
+    supprimer();
     afficher();
+
     printf("%d", count);
     return 0;
 }
