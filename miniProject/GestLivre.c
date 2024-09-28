@@ -4,6 +4,10 @@
 #define BLUE "\033[34m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
+#define RESET "\033[0m"
+#define BLUE "\033[34m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
 int main()
 {
     char titre[100][40];
@@ -102,7 +106,7 @@ int main()
                 if (strcmp(titre[i], rechS) == 0)
                 {
                     foundetS = 1;
-                    for (int j = i; j < count - 1;j++)
+                    for (int j = i; j < count - 1; i--)
                     {
                         strcpy(titre[j], titre[j + 1]);
                         strcpy(auteur[j], auteur[j + 1]);
