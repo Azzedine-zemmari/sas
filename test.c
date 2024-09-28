@@ -1,18 +1,28 @@
 #include <stdio.h>
 
 int main() {
-    int taille;
-    printf("entrer la taille du tableau ");
-    scanf("%d",&taille);
-    int tableau[taille];
-    for(int i = 0; i < taille; i++) {
-        printf("veuillez entrer un nombre : ");
-        scanf("%d",&tableau[i]);
+    int i , j;
+    printf("entrer nombre de ligne ");
+    scanf("%d",&i);
+    printf("entrer nombre de colone ");
+    scanf("%d",&j);
+
+    int T[i][j];
+
+    for(int b1 = 0;b1<i;b1++){
+        for(int b2=0;b2<j;b2++){
+            
+           if(b1 == b2){
+                printf("%d\n",1);
+           }
+
+
+            
+            
+        }
     }
 
-    for(int i = 0; i < taille; i++){
-        printf("%d \n",tableau[i]);
-    }
+     
 
     return 0;
 }
