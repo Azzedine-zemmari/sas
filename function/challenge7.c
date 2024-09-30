@@ -3,12 +3,12 @@
 
 void reversedchar(char str[]){
     int start = 0;
-    int end = strlen(str-1);
+    int end = strlen(str)-1;
     char tmp;
     while(start<end){
         tmp = str[start];
         str[start] = str[end];
-        str[end] = str[start];
+        str[end] = tmp;
         start++;
         end--;
     }
@@ -16,7 +16,7 @@ void reversedchar(char str[]){
 }
 
 int main(){
-    char world[100] ="helloworld";
+    char world[] ="azzedine";
     reversedchar(world);
     printf("%s\n",world);
     return 0;

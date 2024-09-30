@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#define RESET "\033[0m"
-#define BLUE "\033[34m"
-#define RED "\033[31m"
-#define GREEN "\033[32m"
+
 int main()
 {
     char titre[100][40];
@@ -19,13 +16,13 @@ int main()
     do
     {
         printf("\nChoix du menu :\n");
-        printf(BLUE "1 : ajouter\n");
-        printf(BLUE "2 : afficher tous\n");
-        printf(BLUE "3 : modifier quantity de livre\n");
-        printf(BLUE "4 : recherche de livre\n");
-        printf(BLUE "5 : afficher nombre total des livre\n");
-        printf(BLUE "6 : supprimer un livre\n");
-        printf(BLUE "7 : Quitter\n" RESET);
+        printf( "1 : ajouter\n");
+        printf( "2 : afficher tous\n");
+        printf( "3 : modifier quantity de livre\n");
+        printf( "4 : recherche de livre\n");
+        printf( "5 : afficher nombre total des livre\n");
+        printf( "6 : supprimer un livre\n");
+        printf( "7 : Quitter\n");
         printf("Votre choix : ");
         scanf("%d", &choix);
         switch (choix)
@@ -41,7 +38,7 @@ int main()
                 scanf("%f", &prix[count]);
                 printf("enter la qantity : ");
                 scanf("%d", &quantity[count]);
-                printf(GREEN "titre %s par success \n"RESET, titre[count]);
+                printf("titre %s par success \n", titre[count]);
 
                 count++;
 
@@ -67,12 +64,12 @@ int main()
                     found = 1;
                     printf("entrer la nouvelle quantité : ");
                     scanf("%d", &quantity[i]);
-                    printf(GREEN"--- la quantité est modifiée avec succès ---\n"RESET);
+                    printf("--- la quantité est modifiée avec succès ---\n");
                 }
             }
             if (!found)
             {
-                printf(RED"livre non trouvé \n"RESET);
+                printf("livre non trouvé \n");
             }
             break;
         case 4:
@@ -90,7 +87,7 @@ int main()
             }
             break;
         case 5:
-            printf(GREEN"le nombre total des livre et %d\n"RESET, count);
+            printf("le nombre total des livre et %d\n", count);
             break;
         case 6:
             char rechS[20];
@@ -114,10 +111,10 @@ int main()
             }
             break;
         case 7:
-            printf(BLUE"Au revoir !\n"RESET);
+            printf("Au revoir !\n");
             break;
         default:
-            printf(RED"Choix invalide, essayez encore.\n"RESET);
+            printf("Choix invalide, essayez encore.\n");
             break;
         }
     } while (choix != 7);
