@@ -31,7 +31,7 @@ void ajouterMultiple(){
     }while(reponse == 'y' && iter < 100);
 }
 void affichageSimple(){
-    printf("----affichageSimple0----\n");
+    printf("----affichageSimple----\n");
     for(int i = 0;i<iter;i++){
         printf("id : %d\n",c[i].id);
         printf("nom : %s\n",c[i].nom);
@@ -181,6 +181,15 @@ void max(){
     }
     printf("the maximum is %s ",maxnom);
 }
+void min(){
+    char minnom[40];
+    for(int i=0;i<iter;i++){
+        if(strlen(c[i].nom) < strlen(minnom)){
+            strcpy(minnom,c[i].nom);
+        }
+    }  
+    printf("the minumum %s ",minnom);
+}
 int main(){
     int choix , choixAdd , choixAfii,choixMod,choixRECH,choixStas;
     do{
@@ -190,7 +199,8 @@ int main(){
         printf("3.modifier contact \n");
         printf("4.supprimer contact \n");
         printf("5.Rechercher sur un contact \n");
-        printf("6.Quiter \n");
+        printf("6.statique \n");
+        printf("7.quiter\n");
         printf("entrer votre choix ");
         scanf("%d",&choix);
         switch (choix)
@@ -239,7 +249,7 @@ int main(){
                     printf("affichage par desc \n");
                     break;
                 case 4 : 
-                    printf("retour \n");
+                    printf("by \n");
                     break;
                 default:
                     printf("choix invalide \n");
@@ -271,7 +281,7 @@ int main(){
                 modifierTous();
                 break;
             case 5:
-                printf("retour \n");
+                printf("by \n");
                 break;
             default:
                 printf("invalid choix \n");
@@ -324,7 +334,10 @@ int main(){
                 max();
                 break;
             case 3:
-                printf("min");
+                min();
+                break;
+            case 4:
+                printf("by");
                 break;
             default:
                 printf("ce choix est introvable");
@@ -332,6 +345,9 @@ int main(){
             }
         }while(choixStas != 4);
         break;
+        case 7:
+            printf("see u soon !\n");
+            break;
         default:
             printf("ce choix est invalid");
             break;
