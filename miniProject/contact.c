@@ -31,7 +31,7 @@ void ajouterMultiple(){
     }while(reponse == 'y' && iter < 100);
 }
 void affichageSimple(){
-    printf("----affichageSimple----\n");
+    printf("----affichage----\n");
     for(int i = 0;i<iter;i++){
         printf("id : %d\n",c[i].id);
         printf("nom : %s\n",c[i].nom);
@@ -173,8 +173,9 @@ void avg(){
     printf("the avg %d\n",avgR);
 }
 void max(){
-    char maxnom[40] = "";
-    for(int i=0;i<iter;i++){
+    char maxnom[40];
+    strcpy(maxnom,c[0].nom);
+    for(int i=1;i<iter;i++){
         if(strlen(c[i].nom) > strlen(maxnom)){
             strcpy(maxnom,c[i].nom);
         }
@@ -183,12 +184,39 @@ void max(){
 }
 void min(){
     char minnom[40];
-    for(int i=0;i<iter;i++){
+    strcpy(minnom,c[0].nom);
+    for(int i=1;i<iter;i++){
         if(strlen(c[i].nom) < strlen(minnom)){
             strcpy(minnom,c[i].nom);
         }
     }  
     printf("the minumum %s ",minnom);
+}
+void affichageAsc(){
+    char tmp[40];
+    for(int i = 0;i<iter-1;i++){
+        for(int j = i+1;j<iter;j++){
+            if(strcmp(c[i].nom,c[j].nom)>0){
+                    strcpy(tmp,c[i].nom);
+                    strcpy(c[i].nom,c[j].nom);
+                    strcpy(c[j].nom,tmp);
+            }
+        }
+    }
+    affichageSimple();
+}
+void affichageDesc(){
+    char tmp[40];
+    for(int i = 0;i<iter-1;i++){
+        for(int j = i+1;j<iter;j++){
+            if(strcmp(c[i].nom,c[j].nom)<0){
+                    strcpy(tmp,c[i].nom);
+                    strcpy(c[i].nom,c[j].nom);
+                    strcpy(c[j].nom,tmp);
+            }
+        }
+    }
+    affichageSimple();
 }
 int main(){
     int choix , choixAdd , choixAfii,choixMod,choixRECH,choixStas;
@@ -221,7 +249,6 @@ int main(){
                 ajouterMultiple();
                 break;
             case 3 : 
-                printf("retour \n");
                 break;
             default:
                 printf("choix invalide \n");
@@ -235,6 +262,7 @@ int main(){
                 printf("1.affichage simple \n");
                 printf("2.affichage par order asc \n");
                 printf("3.affichage par order descandant \n");
+                printf("4:retour \n");
                 printf("entre votre choix ");
                 scanf("%d",&choixAfii);
                 switch (choixAfii)
@@ -243,13 +271,12 @@ int main(){
                     affichageSimple();
                     break;
                 case 2:
-                    printf("affichage par asc \n");
+                    affichageAsc();
                     break;
                 case 3 : 
-                    printf("affichage par desc \n");
+                    affichageDesc();
                     break;
                 case 4 : 
-                    printf("by \n");
                     break;
                 default:
                     printf("choix invalide \n");
@@ -264,6 +291,7 @@ int main(){
             printf("2.modifier tel \n");
             printf("3.modifier email \n");
             printf("4.modifier tous \n");
+            printf("5:retour \n");
             printf("entrer votre choix ");
             scanf("%d",&choixMod);
             switch (choixMod)
@@ -281,7 +309,6 @@ int main(){
                 modifierTous();
                 break;
             case 5:
-                printf("by \n");
                 break;
             default:
                 printf("invalid choix \n");
@@ -298,6 +325,7 @@ int main(){
             printf("---Recherche---\n");
             printf("1.rechercher avec id\n");
             printf("2.rechercher avec titre\n");
+            printf("3:retour \n");
             printf("enter votre choix ");
             scanf("%d",&choixRECH);
             switch (choixRECH)
@@ -309,7 +337,6 @@ int main(){
                 rechercheByName();
                 break;
             case 3:
-                printf("by");
                 break;
             default:
                 printf("choix invalid \n");
@@ -323,6 +350,7 @@ int main(){
             printf("1.avg\n");
             printf("2.max\n");
             printf("3.min\n");
+            printf("4:retour \n");
             printf("printf the choix ");
             scanf("%d",&choixStas);
             switch (choixStas)
@@ -337,7 +365,6 @@ int main(){
                 min();
                 break;
             case 4:
-                printf("by");
                 break;
             default:
                 printf("ce choix est introvable");
